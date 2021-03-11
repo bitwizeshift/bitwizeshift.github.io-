@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Final Poetry&nbsp;&ndash;&nbsp;@bitwizeshift on software</title><link rel="stylesheet" href="/css/core.min.926318ac86aa87bfee699f8249c632dd56e5fa9c691ec2b7cdc55b3b9fe55b167b6edff9dac71a353d0f3b9e6d4888de.css" integrity="sha384-kmMYrIaqh7/uaZ&#43;CScYy3Vbl&#43;pxpHsK3zcVbO5/lWxZ7bt/52scaNT0PO55tSIje"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Final Poetry" /><body><header id="header">
+  <div class="header wrap">
+    <div class="header left-side"><a class="site home" href="/"><span class="site name">@bitwizeshift on software</span></a>
+    </div>
+    <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/about">About Me</a><a class="nav item" href="/tags">Tags</a><a class="nav item" href="/license">License</a></nav></div></span></div></header>
+<section id="content"><main class="article-container">
+  <article class="article"><header class="article header">
+  <h1 class="article title">Final Poetry</h1><h2 class="article subtitle">An entry in the C++wtf segment</h2><p class="article date">
+      Posted on <time class="published"  title="2021-02-28 01:23:18 -0500 -0500" datetime="2021-02-28 01:23:18 -0500 -0500">February 28, 2021</time></p><aside class="article subscription">
+    <a class="github-button" href="https://github.com/bitwizeshift/bitwizeshift.github.io" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Starbitwizeshift/bitwizeshift.github.ioon GitHub">Star</a><a class="github-button" href="https://github.com/bitwizeshift" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Follow @bitwizeshifton GitHub">Follow @bitwizeshift</a></aside></header>
+<section class="article markdown-body"><aside class="alert alert-info">
+  <div class="icon">
+    <span class="iconfont icon-info-circled"></span>
+  </div>
+  <div class="message"><strong>Disclaimer:</strong> The C++WTF segment shines a light on the dark and
+esoteric corners of the C++ language for fun and profit</div>
+</aside>
+
+<p>The C++ standards committee is very strongly against producing any kind of
+breaking changes when considering new language features &ndash; especially keywords.
+Over the course of standardization, this has lead to terms like <code>auto</code> being
+repurposed, or awkward keywords like <code>co_await</code> and <code>co_yield</code> being introduced
+in C++20 to avoid breaking a handful of projects in the world that might
+possibly be using <code>await</code> or <code>yield</code> in their vocabulary.</p>
+<p>A notable byproduct that comes from this is that some things we take for granted
+in every day modern C++ may not actually be <strong>keywords</strong> in the sense that you
+would expect. For example, both <code>final</code> and <code>override</code> are not actually keywords
+at all!</p>
+<p>These are <strong>context-sensitive specifiers</strong>, rather than official keywords. This
+means that their functionality only applies when found in a very specific place,
+but otherwise allows for their names to be used in any other context &ndash; such as
+variable names, function names, and even type names!</p>
+<p>This allows for the following program to be completely syntactically
+valid, against all logical reason:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">final</span> <span class="k">final</span> <span class="p">{</span>
+  <span class="k">final</span><span class="p">();</span>
+  <span class="k">final</span><span class="p">(</span><span class="k">final</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">:</span> <span class="k">final</span><span class="p">{}{}</span>
+<span class="p">}</span> <span class="k">final</span><span class="p">;</span>
+</code></pre></div><figure class="image-container"><span class="link" ><a href="https://gcc.godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAM1QDsCBlZAQwBtMQBGAFlICsupVs1qhkAUgBMAISnTSAZ0ztkBPHUqZa6AMKpWAVwC2tQVvQAZPLUwA5YwCNMxEAFZSAB1QLC62nsMTQS8fNTorG3sjJxd3JRUw2gYCZmICAONTTkVlTFU/ZNSCCLtHZ0EFFLSMoOzKopKomK4ASkVUA2JkDgBySuIDVQBqKms2EbHWIfEAdlkABgBBIYnaNggW8QBmBeXV9dG11ikANlOWoZB947nZgBFZ2RmHpfvr7d2ettYQHtce0imHrzAGoX46ORyIYKDpdTDTSRbTgAgi/EEtNoAazc8yEv24AKBINIYJ6AIUIFxqOBX1IcFgMEQKFQRg8eHYZAoEDQrPZ5WAnHmklIo1YBGcFIgDjRAIcY2IAE9fsjSDyjFoCAB5WisJU00hYIwiYDsGUGvDEPJqABumAp%2BswAA88gZxcqAdZxT99aw8A5iKkFXosGaCMQ8EZ3W0aPQmGwODx%2BIJhKIUJCZEI/RTIG1UB5Evbybl8hoIOYallSOZGmUXNkQr46BXgt5G7Qa9FynVi4lCtV9JkKj2ClVitZSp264pR826qOO81OG0YZ1uq08X9CWbSY6ABwnAC0J24Q2AyGQQ0FADpJEMILhCCQEUjSEM9LyOc%2Bl2/09IUTKMVIbFXFxb0CVISMQMBbdfnJSlSGpdE6UZCAkA6AgPFdchKB5NkOTMfAiCnGNGBYU1EwAdwDDwow3f5oP1UkpCRIYKMIBAhj3Q9j1Pc9L3mG9/xpQCEEwZgsBcDYN3AyDcSJUFYMUeDEK%2BLEcQ3LYt0YxSVMA71JC04lSSE9E2ltYgfA0bggA%3D%3D"
+        target="_blank"><img class="img" src="https://img.shields.io/badge/try-online-blue.svg"
+         alt="Try Online"/></a></span>
+</figure>
+
+<p>This creates a <code>final</code> type named <code>final</code> and also creates an object of said
+type which is <em>also</em> named <code>final</code>. This is C++&rsquo;s equivalent of the
+<a href="https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo"target="_blank" rel="noopener noreferrer">buffalo buffalo sentence</a>
+
+or the <a href="https://en.wikipedia.org/wiki/Lion-Eating_Poet_in_the_Stone_Den"target="_blank" rel="noopener noreferrer">shi shi shi poem</a>
+,
+and I think that&rsquo;s <em>beautiful</em>. Of course, save this in the back of your mind as
+an esoteric fact about C++ &ndash; and don&rsquo;t spring this in any professional code, or
+you might have some very upset maintainers!</p>
+</section><footer class="article footer"><section class="article labels"><section class="article-tags-section">
+    <header class="article languages header" style="float:left;">
+      <h4 style="display:none;">Tags</h4>
+    </header>
+    <p><a class="tag" href=/tags/esoteric/>esoteric</a><a class="tag" href=/tags/language-lawyer/>language-lawyer</a><a class="tag" href=/tags/funny/>funny</a></p>
+  </section></section><section class="article social-share">
+  <span class="sr-only">Share: </span>
+  <a href="https://twitter.com/intent/tweet?text=Final%20Poetry&amp;url=https%3a%2f%2fbitwizeshift.github.io%2fposts%2f2021%2f02%2f28%2ffinal-poetry%2f" class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+    <span class="iconfont icon-twitter" aria-hidden="true"></span>
+    <span class="sr-only">Twitter</span>
+  </a>
+  
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbitwizeshift.github.io%2fposts%2f2021%2f02%2f28%2ffinal-poetry%2f" class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+    <span class="iconfont icon-facebook" aria-hidden="true"></span>
+    <span class="sr-only">Facebook</span>
+  </a>
+  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbitwizeshift.github.io%2fposts%2f2021%2f02%2f28%2ffinal-poetry%2f" class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+    <span class="iconfont icon-linkedin" aria-hidden="true"></span>
+    <span class="sr-only">LinkedIn</span>
+  </a>
+  
+  <a href="https://www.reddit.com/submit?title=Final%20Poetry&amp;url=https%3a%2f%2fbitwizeshift.github.io%2fposts%2f2021%2f02%2f28%2ffinal-poetry%2f" class="btn btn-social-icon btn-linkedin" title="Share on Reddit">
+    <span class="iconfont icon-reddit-alien" aria-hidden="true"></span>
+    <span class="sr-only">Reddit</span>
+  </a>
+</section>
+
+<aside class="article metadata"><div class="git-source-container visible-on-wide-devices">
+    <p class="git-source"><b>Source:</b> <a href="https://github.com/bitwizeshift/bitwizeshift.github.io/blob/308e8497bd7e07562d9c5feff378a906dc1dd941/content/posts/2021-02-28/cppwtf-final-poetry.md">308e8497bd7e07562d9c5feff378a906dc1dd941</a></p>
+  </div>
+  <div class="git-source-container visible-on-small-devices">
+    <p class="git-source"><b>Source:</b> <a href="https://github.com/bitwizeshift/bitwizeshift.github.io/blob/308e8497bd7e07562d9c5feff378a906dc1dd941/content/posts/2021-02-28/cppwtf-final-poetry.md">308e849</a></p>
+  </div><div class="git-modified-container"><p class="last-modified-date"><b>Last modified:</b> <time title="2021-03-11 14:18:14 -0500 -0500" datetime="2021-03-11 14:18:14 -0500 -0500">March 11, 2021</time></p>
+  </div></aside>
+</footer>
+</article>
+</main><div class="article bottom"><section class="article bottom-navigation"><section class="previous-and-next"><section class="previous-article"><div class="visible-on-wide-devices">
+        <p><strong>
+          <a class="link" href="/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-3/" title="Creating a Fast and Efficient Delegate Type (Part 3)"><span class="iconfont icon-previous"></span> Previous Post</a>
+        </strong></p>
+      </div>
+      <div class="visible-on-small-devices">
+        <p><strong>
+          <a class="link" href="/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-3/" title="Creating a Fast and Efficient Delegate Type (Part 3)">Previous Post</a>
+        </strong></p>
+      </div></section><section class="next-article"><div class="visible-on-wide-devices">
+        <p><strong>
+          <a class="link" href="/posts/2021/03/02/builder-pattern-expressing-ownership-transfer/" title="Builder Pattern: Expressing ownership transfer">Next Post <span class="iconfont icon-next"></span></a>
+        </strong></p>
+      </div>
+      <div class="visible-on-small-devices">
+        <p><strong>
+          <a class="link" href="/posts/2021/03/02/builder-pattern-expressing-ownership-transfer/" title="Builder Pattern: Expressing ownership transfer"></a>Next Post</a>
+        </strong></p>
+      </div></section></section>
+</section></div></section><footer id="footer">
+  <div class="footer-wrap"><section class="social">
+  <a class="link" href="/index.xml" title="RSS"><span class="sr-only">RSS</span><span class="iconfont icon-rss"></span></a><a class="link" href="mailto:bitwizeshift@rodusek.com" title="Email me"><span class="sr-only">Email me</span><span class="iconfont icon-envelope-open-o"></span></a><a class="link" href="https://github.com/bitwizeshift" title="Github"><span class="sr-only">Github</span><span class="iconfont icon-github"></span></a><a class="link" href="https://twitter.com/bitwizeshift" title="Twitter"><span class="sr-only">Twitter</span><span class="iconfont icon-twitter"></span></a><a class="link" href="https://reddit.com/u/bitwizeshift" title="Reddit"><span class="sr-only">Reddit</span><span class="iconfont icon-reddit-alien"></span></a><a class="link" href="https://linkedin.com/in/matthewrodusek" title="LinkedIn"><span class="sr-only">LinkedIn</span><span class="iconfont icon-linkedin"></span></a><a class="link" href="https://stackoverflow.com/users/1678770" title="StackOverflow"><span class="sr-only">StackOverflow</span><span class="iconfont icon-stackoverflow"></span></a></section>
+<p class="copyright">©2021 Matthew Rodusek.</p>
+<p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io"
+    target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/"
+    target="_blank" rel="noopener noreferrer">Notepadium</a></p>
+</div>
+</footer><script async defer src="/js/buttons.min.358cb9d33c8ce4b024a9addea34a7259a50f19baf13a938aa3fe1e39ba25a034d185527ed68b65ba6e7ac2e6cd0806db.js" integrity="sha384-NYy50zyM5LAkqa3eo0pyWaUPGbrxOpOKo/4eOboloDTRhVJ&#43;1otlum56wubNCAbb"></script>
+</body>
+
+</html>

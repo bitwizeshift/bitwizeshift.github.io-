@@ -16,10 +16,10 @@
     
     <item>
       <title>Getting an Unmangled Type Name at Compile Time</title>
-      <link>https://bitwizeshift.github.io/posts/2020-03-09/getting-an-unmangled-type-name-at-compile-time/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/03/09/getting-an-unmangled-type-name-at-compile-time/</link>
       <pubDate>Tue, 09 Mar 2021 19:21:59 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2020-03-09/getting-an-unmangled-type-name-at-compile-time/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/03/09/getting-an-unmangled-type-name-at-compile-time/</guid>
       <description>&lt;p&gt;Getting the name of a type in C++ is a hassle. For something that should be
 trivially known by the compiler at compile-time, the closest thing we have to
 getting the type in a &lt;strong&gt;cross-platform&lt;/strong&gt; way is to use
@@ -35,10 +35,10 @@ solving!&lt;/p&gt;</description>
     
     <item>
       <title>Builder Pattern: Expressing ownership transfer</title>
-      <link>https://bitwizeshift.github.io/posts/2020-03-02/builder-pattern-expressing-ownership-transfer/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/03/02/builder-pattern-expressing-ownership-transfer/</link>
       <pubDate>Tue, 02 Mar 2021 17:06:40 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2020-03-02/builder-pattern-expressing-ownership-transfer/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/03/02/builder-pattern-expressing-ownership-transfer/</guid>
       <description>&lt;p&gt;The Builder pattern is a common design in software development for late-binding
 inputs to allow for iterative construction. This pattern, when applied in &lt;code&gt;c++&lt;/code&gt;,
 leaves one very obvious question: &lt;strong&gt;Can we present this to consumers in an
@@ -50,37 +50,37 @@ consumers?&lt;/p&gt;</description>
     
     <item>
       <title>Final Poetry</title>
-      <link>https://bitwizeshift.github.io/posts/2021-02-28/cppwtf-final-poetry/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/02/28/final-poetry/</link>
       <pubDate>Sun, 28 Feb 2021 01:23:18 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2021-02-28/cppwtf-final-poetry/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/02/28/final-poetry/</guid>
       <description>Disclaimer: The C++WTF segment shines a light on the dark and esoteric corners of the C++ language for fun and profit  The C++ standards committee is very strongly against producing any kind of breaking changes when considering new language features &amp;ndash; especially keywords. Over the course of standardization, this has lead to terms like auto being repurposed, or awkward keywords like co_await and co_yield being introduced in C++20 to avoid breaking a handful of projects in the world that might possibly be using await or yield in their vocabulary.</description>
     </item>
     
     <item>
       <title>Creating a Fast and Efficient Delegate Type (Part 3)</title>
-      <link>https://bitwizeshift.github.io/posts/2021-02-26/creating-a-fast-and-efficient-delegate-type-3/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-3/</link>
       <pubDate>Fri, 26 Feb 2021 22:19:51 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2021-02-26/creating-a-fast-and-efficient-delegate-type-3/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-3/</guid>
       <description>In the previous post we reworked our &lt;code&gt;Delegate&lt;/code&gt; object into something more modern and easy-to-use by using &lt;code&gt;c++17&lt;/code&gt; &amp;ndash; but is this utility zero-overhead? In this post we will look at how to optimize this into a true zero-overhead utility.</description>
     </item>
     
     <item>
       <title>Creating a Fast and Efficient Delegate Type (Part 2)</title>
-      <link>https://bitwizeshift.github.io/posts/2021-02-26/creating-a-fast-and-efficient-delegate-type-2/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-2/</link>
       <pubDate>Fri, 26 Feb 2021 22:18:32 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2021-02-26/creating-a-fast-and-efficient-delegate-type-2/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-2/</guid>
       <description>In the previous post we saw how we could build a simple and light-weight &lt;code&gt;Delegate&lt;/code&gt; type that binds free functions, and member functions; however there are several notable limitation. Lets expand on this and make it even better using &lt;code&gt;c++17&lt;/code&gt; features.</description>
     </item>
     
     <item>
       <title>Creating a Fast and Efficient Delegate Type (Part 1)</title>
-      <link>https://bitwizeshift.github.io/posts/2021-02-24/creating-a-fast-and-efficient-delegate-type/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/02/24/creating-a-fast-and-efficient-delegate-type-part-1/</link>
       <pubDate>Wed, 24 Feb 2021 20:03:14 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2021-02-24/creating-a-fast-and-efficient-delegate-type/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/02/24/creating-a-fast-and-efficient-delegate-type-part-1/</guid>
       <description>It&amp;rsquo;s often desirable when working in C++ to create callbacks that never leave a certain lifetime, and only bind functions or function pointers. The C++ standard only offers &lt;code&gt;std::function&lt;/code&gt; and &lt;code&gt;std::packaged_task&lt;/code&gt;, both of which are more heavy than they need to be.
 We can do better. Lets produce a better alternative to the existing solutions that could satisfy this problem in a nice and coherent way.</description>
     </item>

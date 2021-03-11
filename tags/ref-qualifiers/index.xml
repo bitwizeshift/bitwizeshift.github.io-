@@ -16,10 +16,10 @@
     
     <item>
       <title>Builder Pattern: Expressing ownership transfer</title>
-      <link>https://bitwizeshift.github.io/posts/2020-03-02/builder-pattern-expressing-ownership-transfer/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/03/02/builder-pattern-expressing-ownership-transfer/</link>
       <pubDate>Tue, 02 Mar 2021 17:06:40 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2020-03-02/builder-pattern-expressing-ownership-transfer/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/03/02/builder-pattern-expressing-ownership-transfer/</guid>
       <description>&lt;p&gt;The Builder pattern is a common design in software development for late-binding
 inputs to allow for iterative construction. This pattern, when applied in &lt;code&gt;c++&lt;/code&gt;,
 leaves one very obvious question: &lt;strong&gt;Can we present this to consumers in an

@@ -16,10 +16,10 @@
     
     <item>
       <title>Getting an Unmangled Type Name at Compile Time</title>
-      <link>https://bitwizeshift.github.io/posts/2020-03-09/getting-an-unmangled-type-name-at-compile-time/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/03/09/getting-an-unmangled-type-name-at-compile-time/</link>
       <pubDate>Tue, 09 Mar 2021 19:21:59 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2020-03-09/getting-an-unmangled-type-name-at-compile-time/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/03/09/getting-an-unmangled-type-name-at-compile-time/</guid>
       <description>&lt;p&gt;Getting the name of a type in C++ is a hassle. For something that should be
 trivially known by the compiler at compile-time, the closest thing we have to
 getting the type in a &lt;strong&gt;cross-platform&lt;/strong&gt; way is to use

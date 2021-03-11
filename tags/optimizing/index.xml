@@ -16,10 +16,10 @@
     
     <item>
       <title>Creating a Fast and Efficient Delegate Type (Part 3)</title>
-      <link>https://bitwizeshift.github.io/posts/2021-02-26/creating-a-fast-and-efficient-delegate-type-3/</link>
+      <link>https://bitwizeshift.github.io/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-3/</link>
       <pubDate>Fri, 26 Feb 2021 22:19:51 -0500</pubDate>
       <author>bitwizeshift@rodusek.com (Matthew Rodusek)</author>
-      <guid>https://bitwizeshift.github.io/posts/2021-02-26/creating-a-fast-and-efficient-delegate-type-3/</guid>
+      <guid>https://bitwizeshift.github.io/posts/2021/02/26/creating-a-fast-and-efficient-delegate-type-part-3/</guid>
       <description>In the previous post we reworked our &lt;code&gt;Delegate&lt;/code&gt; object into something more modern and easy-to-use by using &lt;code&gt;c++17&lt;/code&gt; &amp;ndash; but is this utility zero-overhead? In this post we will look at how to optimize this into a true zero-overhead utility.</description>
     </item>
     
